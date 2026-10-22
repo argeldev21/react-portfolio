@@ -9,7 +9,7 @@ export default function StatusContent() {
       <div className="status-grid">
         <div className="status-top">
           <h2>{DATA.name}</h2>
-          <span className="status-lv">LV. {DATA.status.level}</span>
+          <span className="status-lv">LV. {DATA.status.level} </span>
         </div>
         <div className="status-meta">
           <span><b>Rank</b> · {DATA.status.rank}</span>
