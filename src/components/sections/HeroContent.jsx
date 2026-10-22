@@ -1,6 +1,6 @@
 import  { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
-import { ArrowDown } from 'lucide-react'; // Importiamo la freccia
+import { ArrowDown } from 'lucide-react'; 
 import { DATA } from "../../data/portfolioData";
 
 export const HeroContent = () => {

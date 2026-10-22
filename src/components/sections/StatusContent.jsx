@@ -1,6 +1,6 @@
 
-import  SystemFrame  from "../ui/SystemFrame";
-import  StatBar  from "../ui/StatBar";
+import  SystemFrame  from "../UI/SystemFrame";
+import  StatBar  from "../UI/StatBar";
 import { DATA } from "../../data/portfolioData";
 
 export default function StatusContent() {

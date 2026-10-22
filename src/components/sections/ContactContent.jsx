@@ -1,6 +1,6 @@
 
 import { Mail, Swords } from "lucide-react";
-import  SystemFrame  from "../ui/SystemFrame";
+import  SystemFrame  from "../UI/SystemFrame";
 import { DATA } from "../../data/portfolioData";
 
 export default function ContactContent() {
