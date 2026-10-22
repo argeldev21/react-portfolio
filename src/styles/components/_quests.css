@@ -14,3 +14,25 @@
 .quest-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.6rem; }
 .quest-reward span { font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); border:1px solid var(--text-faint); padding:2px 7px; border-radius:3px; }
 .quest-link { display:inline-flex; align-items:center; gap:5px; font-size:0.78rem; color:var(--glow); text-decoration:none; }
+
+/* Messaggio "Work in Progress" quando non ci sono progetti */
+.quest-empty {
+  padding: 1.5rem 0;
+  text-align: center;
+}
+.quest-empty-title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--glow);
+  margin-bottom: 0.5rem;
+}
+.quest-empty p {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+}
