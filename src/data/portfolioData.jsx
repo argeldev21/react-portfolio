@@ -72,32 +72,7 @@ export const DATA = {
     },
   ],
 
-  quests: [
-    {
-      rank: "S",
-      title: "Piattaforma e-commerce headless",
-      status: "COMPLETATA",
-      desc: "Riprogettazione completa del checkout: -38% di abbandoni carrello, catalogo real-time.",
-      reward: ["Next.js", "Stripe", "PostgreSQL"],
-      link: "#",
-    },
-    {
-      rank: "A",
-      title: "Dashboard analytics in tempo reale",
-      status: "COMPLETATA",
-      desc: "Visualizzazione dati per team operativi con oltre 50k eventi al minuto.",
-      reward: ["React", "WebSocket", "D3.js"],
-      link: "#",
-    },
-    {
-      rank: "B",
-      title: "Design system multi-brand",
-      status: "COMPLETATA",
-      desc: "Libreria di componenti condivisa tra 4 prodotti, con Storybook e token centralizzati.",
-      reward: ["TypeScript", "Storybook", "Figma"],
-      link: "#",
-    },
-  ],
+  quests: [ ],
 
   contact: {
     heading: "Richiesta di alleanza",
