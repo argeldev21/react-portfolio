@@ -1,0 +1,10 @@
+.contact-wrap { text-align:left; }
+.contact-wrap h2 { font-size:1.8rem; font-weight:700; margin-bottom:0.7rem; }
+.contact-wrap p { color:var(--text-muted); max-width:480px; line-height:1.7; margin-bottom:1.6rem; }
+.contact-btn {
+  display:inline-flex; align-items:center; gap:9px; font-family:var(--font-display); font-weight:600; letter-spacing:0.06em; text-transform:uppercase; font-size:0.85rem;
+  color:var(--bg-void); background:var(--glow); padding:12px 22px; border-radius:3px; text-decoration:none; box-shadow:0 0 24px var(--glow-soft);
+}
+.contact-socials { display:flex; gap:14px; margin-top:1.6rem; }
+.contact-socials a { display:flex; align-items:center; justify-content:center; width:40px; height:40px; border:1px solid var(--text-faint); border-radius:3px; color:var(--text-muted); transition: border-color 0.2s, color 0.2s; }
+.contact-socials a:hover { border-color:var(--glow); color:var(--glow); }

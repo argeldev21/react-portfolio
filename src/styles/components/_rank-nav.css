@@ -1,0 +1,45 @@
+.rank-nav {
+  position: absolute;
+  right: clamp(1rem, 3vw, 2.4rem);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  z-index: 10;
+}
+
+.rank-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--font-mono);
+}
+
+.rank-item:focus-visible { outline: 2px solid var(--glow); border-radius: 4px; }
+
+.rank-node {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid var(--text-faint);
+  transition: transform 0.3s var(--ease-soft), background-color 0.3s var(--ease-soft), border-color 0.3s var(--ease-soft), box-shadow 0.3s var(--ease-soft);
+}
+
+.rank-item.on .rank-node {
+  background: var(--glow);
+  border-color: var(--glow);
+  box-shadow: 0 0 10px 2px var(--glow-soft);
+  transform: scale(1.22);
+}
+
+.rank-label { font-size: 0.62rem; color: var(--text-faint); transition: color 0.3s; }
+.rank-item.on .rank-label { color: var(--glow); }
+
+.rank-line { width: 1px; height: 14px; background: var(--text-faint); }

@@ -1,0 +1,11 @@
+.stat-row { display: grid; grid-template-columns: 120px 1fr 42px; align-items: center; gap: 14px; margin: 1rem 0; }
+.stat-label { display:flex; align-items:center; gap:8px; font-size:0.85rem; color:var(--text-muted); }
+.stat-track { height:6px; background: rgba(255,255,255,0.06); border-radius:3px; overflow:hidden; }
+.stat-fill {
+  height:100%;
+  background: linear-gradient(90deg, var(--glow), #7dd8ff);
+  box-shadow: 0 0 8px var(--glow-soft);
+  border-radius:3px;
+  transition: width var(--dur-open) var(--ease-soft);
+}
+.stat-value { font-family: var(--font-mono); font-size:0.78rem; color:var(--text-muted); text-align:right; }

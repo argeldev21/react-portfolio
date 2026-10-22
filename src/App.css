@@ -1,0 +1,48 @@
+.button {
+  width: max-content;
+  cursor: pointer;
+  padding: 10px 25px;
+  border-radius: 8px;
+
+  /* BORDO NEON */
+  border: 2px solid transparent;
+
+  /* GRADIENT BASE (senza #00FF6A) */
+  background: linear-gradient(
+    135deg,
+    #010101,
+    #0F4C3A,
+    #006644
+  );
+
+  /* GLOW NEON */
+  box-shadow:
+    0 0 6px #00FF6A,
+    0 0 12px #00FF6A inset,
+    0 0 36px #0F4C3A;
+
+  /* TESTO CON CONTRASTO MASSIMO */
+  color: #00FF6A;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  transition: all 0.25s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px) scale(1.03);
+  border: 2px solid #00FF6A;
+
+  box-shadow:
+    0 0 18px #00FF6A,
+    0 0 36px #00FF6A inset,
+    0 0 48px #006644;
+
+  background: linear-gradient(
+    135deg,
+    #00FF6A,
+    #006644,
+    #0F4C3A,
+    #010101
+  );
+}

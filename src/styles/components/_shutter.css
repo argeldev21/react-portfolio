@@ -1,0 +1,20 @@
+.sw-shutter { position: relative; width: 100%; max-width: 880px; }
+.sw-shutter-clip { width: 100%; }
+.sw-shutter-clip.closing { animation: sw-clip-close var(--dur-close) var(--ease-fast) forwards; }
+.sw-shutter-clip.opening { animation: sw-clip-open var(--dur-open) var(--ease-soft) forwards; }
+
+@keyframes sw-clip-close { from { clip-path: inset(0% 0 0% 0); } to { clip-path: inset(50% 0 50% 0); } }
+@keyframes sw-clip-open  { from { clip-path: inset(50% 0 50% 0); } to { clip-path: inset(0% 0 0% 0); } }
+
+.sw-edge { position:absolute; left:0; right:0; height:2px; z-index:3; background:var(--glow); box-shadow:0 0 10px 2px var(--glow-soft), 0 0 26px 6px var(--glow-dim); pointer-events:none; }
+.sw-edge-top { top:50%; } .sw-edge-bottom { bottom:50%; }
+
+.sw-edge-top.closing    { animation: sw-edge-top-close var(--dur-close) var(--ease-fast) forwards; }
+.sw-edge-bottom.closing { animation: sw-edge-bottom-close var(--dur-close) var(--ease-fast) forwards; }
+.sw-edge-top.opening    { animation: sw-edge-top-open var(--dur-open) var(--ease-soft) forwards; }
+.sw-edge-bottom.opening { animation: sw-edge-bottom-open var(--dur-open) var(--ease-soft) forwards; }
+
+@keyframes sw-edge-top-close    { from { top:0%; } to { top:50%; } }
+@keyframes sw-edge-bottom-close { from { bottom:0%; } to { bottom:50%; } }
+@keyframes sw-edge-top-open     { from { top:50%; } to { top:0%; } }
+@keyframes sw-edge-bottom-open  { from { bottom:50%; } to { bottom:0%; } }

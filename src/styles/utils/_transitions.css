@@ -1,0 +1,7 @@
+/* Shared transitions and reduced-motion support */
+* { transition-timing-function: var(--ease-soft); }
+@media (prefers-reduced-motion: reduce) {
+  .sw-shutter-clip.closing, .sw-shutter-clip.opening { animation: none !important; }
+  .sw-edge.closing, .sw-edge.opening { animation: none !important; opacity: 0 !important; }
+  .sw-dot, .hero-scroll svg { animation: none !important; }
+}

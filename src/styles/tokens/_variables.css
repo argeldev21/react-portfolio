@@ -1,0 +1,20 @@
+:root{
+  --bg-void: #04060c;
+  --bg-panel: #0a0f1cf0;
+  --glow: #38bdf8;
+  --glow-soft: rgba(56,189,248,0.35);
+  --glow-dim: rgba(56,189,248,0.12);
+  --violet: #7c5cff;
+  --text-primary: #eaf6ff;
+  --text-muted: #7d93b3;
+  --text-faint: #3d5170;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+
+  --ease-fast: cubic-bezier(0.6,0,0.4,1);
+  --ease-soft: cubic-bezier(0.16,0.9,0.25,1);
+
+  --dur-close: 380ms;
+  --dur-open: 420ms;
+}

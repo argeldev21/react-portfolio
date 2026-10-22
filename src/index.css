@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root {
+  /* --- BASE / HUD --- */
+  --console-bg: #0A0A0A;        /* sfondo scuro */
+  --console-panel: #111820;     /* pannelli, card */
+  --console-line: #1F2A33;      /* bordi, divider */
+  --console-glow: #0AE0FF;      /* glow blu holografico */
+
+  /* --- XP / LEVELING --- */
+  --xp-green: #00FF6A;          /* XP, level up */
+  --xp-green-soft: #00FFA2;     /* highlight XP */
+  --xp-bar-bg: #0F4C3A;         /* barra XP vuota */
+
+  /* --- STATUS / ALERT --- */
+  --status-yellow: #FFD93D;     /* warning */
+  --error-red: #FF3B3B;         /* errori */
+  --success-green: #00FF6A;     /* successi */
+
+  /* --- INFO / DATA --- */
+  --info-cyan: #00E5FF;         /* dati, info */
+  --info-blue: #0094FF;         /* elementi secondari */
+  --info-glow: #00CFFF;         /* glow blu chiaro */
+
+  /* --- TEXT --- */
+  --text-main: #E8F9FF;         /* testo principale */
+  --text-muted: #9BB3C5;        /* testo secondario */
+  --text-warning: #FFD93D;      /* testo warning */
+  --text-error: #FF3B3B;        /* testo error */
+}
+

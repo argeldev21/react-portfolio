@@ -1,0 +1,16 @@
+.quest-list { display: grid; gap: 1rem; max-height: 62vh; overflow-y: auto; padding-right: 6px; }
+.quest-card {
+  border: 1px solid var(--text-faint);
+  border-left: 2px solid var(--glow);
+  border-radius: 3px;
+  padding: 1.1rem 1.3rem;
+  background: rgba(56,189,248,0.03);
+}
+.quest-top { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; margin-bottom:0.5rem; }
+.quest-rank { font-family:var(--font-mono); font-size:0.7rem; color:var(--violet); border:1px solid rgba(124,92,255,0.4); padding:2px 7px; border-radius:3px; flex-shrink:0; }
+.quest-title { font-size:1.02rem; font-weight:600; font-family:var(--font-display); }
+.quest-status { font-family:var(--font-mono); font-size:0.65rem; color:var(--glow); letter-spacing:0.05em; white-space:nowrap; }
+.quest-desc { color:var(--text-muted); font-size:0.85rem; line-height:1.6; margin:0.4rem 0 0.7rem; }
+.quest-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.6rem; }
+.quest-reward span { font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); border:1px solid var(--text-faint); padding:2px 7px; border-radius:3px; }
+.quest-link { display:inline-flex; align-items:center; gap:5px; font-size:0.78rem; color:var(--glow); text-decoration:none; }
