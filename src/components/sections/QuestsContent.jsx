@@ -1,16 +1,37 @@
+import { useEffect, useRef } from "react";
+import Typed from "typed.js";
 import { ExternalLink } from "lucide-react";
 import SystemFrame from "../ui/SystemFrame";
 import { DATA } from "../../data/portfolioData";
 
 export default function QuestsContent() {
   const quests = DATA.quests;
+  const isEmpty = quests.length === 0;
+  const wipRef = useRef(null);
+
+  useEffect(() => {
+    if (!isEmpty || !wipRef.current) return;
+
+    const typed = new Typed(wipRef.current, {
+      // ^400 = pausa di 400ms prima di ogni puntino
+      strings: ["^500.^500.^500."],
+      typeSpeed: 60,
+      backSpeed: 40,
+      backDelay: 1500,
+      loop: true,
+      smartBackspace: true,
+      showCursor: false,
+      
+    });
+
+    return () => typed.destroy();
+  }, [isEmpty]);
 
   return (
     <SystemFrame eyebrow="Projects">
-      {quests.length === 0 ? (
+      {isEmpty ? (
         <div className="quest-empty">
-          <span className="quest-empty-title">Work in Progress</span>
-          <p>Nuovi progetti in arrivo. Torna a trovarmi presto.</p>
+          Work in Progress<span ref={wipRef} className="quest-empty-title" />
         </div>
       ) : (
         <div className="quest-list">

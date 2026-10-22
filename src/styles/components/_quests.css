@@ -30,9 +30,11 @@
   color: var(--glow);
   margin-bottom: 0.5rem;
 }
-.quest-empty p {
+.quest-empty { padding: 1.5rem 0; }
+.quest-empty-title {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--glow);
 }
