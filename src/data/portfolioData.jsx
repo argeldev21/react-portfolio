@@ -15,7 +15,7 @@ export const OPEN_MS = 420;
 
 export const DATA = {
   name: "Argel Allan Dela Cruz",
-  title: "Full-Stack / Cloud Developer",
+  title: "Cloud / Web Developer",
   tagline: [
     "Costruisco interfacce che si comportano come dovrebbero: veloci, chiare, senza fronzoli (forse).",
     "Costruisco interfacce che si comportano come dovrebbero: veloci, chiare, senza fronzoli.",
