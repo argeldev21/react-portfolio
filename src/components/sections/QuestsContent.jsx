@@ -5,7 +5,7 @@ import { DATA } from "../../data/portfolioData";
 
 export default function QuestsContent() {
   return (
-    <SystemFrame eyebrow="Quest log">
+    <SystemFrame eyebrow="Projects">
       <div className="quest-list">
         {DATA.quests.map((q) => (
           <div className="quest-card" key={q.title}>
