@@ -15,7 +15,7 @@ const OPEN_MS = 420;
 
 export default function App() {
   const [active, setActive] = useState(0);
-  const [phase, setPhase] = useState("idle"); // 'idle' | 'closing' | 'opening'
+  const [phase, setPhase] = useState("idle"); 
 
   const pendingIndex = useRef(0);
   const closeTimer = useRef(null);
