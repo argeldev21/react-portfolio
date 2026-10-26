@@ -4,7 +4,7 @@ import { ExternalLink } from "lucide-react";
 import SystemFrame from "../ui/SystemFrame";
 import { DATA } from "../../data/portfolioData";
 
-export default function QuestsContent() {
+export default function ProjectsContent() {
   const quests = DATA.quests;
   const isEmpty = quests.length === 0;
   const wipRef = useRef(null);
@@ -49,9 +49,11 @@ export default function QuestsContent() {
                 <div className="quest-reward">
                   {q.reward.map((r) => <span key={r}>{r}</span>)}
                 </div>
-                <a className="quest-link" href={q.link}>
-                  Vedi progetto <ExternalLink size={13} />
-                </a>
+                {q.link && (
+                  <a className="quest-link" href={q.link} target="_blank" rel="noreferrer">
+                    Vedi progetto <ExternalLink size={13} />
+                  </a>
+                )}
               </div>
             </div>
           ))}

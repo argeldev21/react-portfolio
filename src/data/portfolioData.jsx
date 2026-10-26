@@ -10,6 +10,8 @@ import {
 import { GithubIcon, LinkedinIcon } from "../components/ui/Icons";
 
 export const RANKS = ["", "", "", "", ""];
+// Nomi univoci delle sezioni: usati come key e per le etichette di accessibilità della nav.
+export const SECTION_NAMES = ["Home", "Status", "Competenze", "Progetti", "Contatti"];
 export const CLOSE_MS = 380;
 export const OPEN_MS = 420;
 
@@ -46,41 +48,53 @@ export const DATA = {
     {
       group: "Frontend",
       items: [
-        { name: "React", lvl: "MAX" },
-        { name: "TypeScript", lvl: "MAX" },
-        { name: "Next.js", lvl: "LV.8" },
-        { name: "Tailwind CSS", lvl: "LV.9" },
+        { name: "HTML / CSS", lvl: "LV.6" },
+        { name: "JavaScript", lvl: "LV.6" },
+        { name: "Vue.js", lvl: "LV.5" },
+        { name: "Angular", lvl: "LV.4" },
+        { name: "React", lvl: "LV.5" },
+        { name: "Flutter", lvl: "LV.3" },
       ],
     },
     {
       group: "Backend",
       items: [
-        { name: "Node.js", lvl: "LV.8" },
-        { name: "PostgreSQL", lvl: "LV.7" },
-        { name: "GraphQL", lvl: "LV.6" },
-        { name: "Docker", lvl: "LV.6" },
+        { name: "Java / Spring Boot", lvl: "LV.4" },
+        { name: "C# / .NET", lvl: "LV.5" },
+        { name: "PHP / Laravel", lvl: "LV.5" },
+        { name: "REST API", lvl: "LV.5" },
       ],
     },
     {
-      group: "Strumenti",
+      group: "Database",
       items: [
-        { name: "Git", lvl: "MAX" },
-        { name: "Figma", lvl: "LV.7" },
-        { name: "CI / CD", lvl: "LV.6" },
-        { name: "Vitest", lvl: "LV.7" },
+        { name: "PostgreSQL", lvl: "LV.4" },
+        { name: "MongoDB", lvl: "LV.3" },
+        { name: "MySQL", lvl: "LV.5" },
+        { name: "SQL Server", lvl: "LV.4" },
+      ],
+    },
+    {
+      group: "Cloud & Tools",
+      items: [
+        { name: "AWS", lvl: "LV.3" },
+        { name: "Docker", lvl: "LV.3" },
+        { name: "Git", lvl: "LV.5" },
+        { name: "Linux", lvl: "LV.4" },
       ],
     },
   ],
 
-  quests: [ ],
+  quests: [],
 
   contact: {
     heading: "Richiesta di alleanza",
-    body: "Hai un progetto in mente o cerchi un developer per il tuo party? Mandami un segnale.",
-    email: "tuonome@email.com",
+    body: "Hai un progetto in mente o cerchi un developer per il tuo team? Mandami un segnale.",
+    email: "argeldelacruz86@gmail.com",
     socials: [
-      { label: "GitHub", icon: GithubIcon, href: "https://github.com/tuonome" },
-      { label: "LinkedIn", icon: LinkedinIcon, href: "https://linkedin.com/in/tuonome" },
+      { label: "GitHub", icon: GithubIcon, href: "https://github.com/argeldev21" },
+      
+      { label: "LinkedIn", icon: LinkedinIcon, href: "" },
     ],
   },
 };

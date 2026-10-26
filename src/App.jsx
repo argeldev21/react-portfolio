@@ -5,7 +5,7 @@ import { HeroContent } from "./components/sections/HeroContent";
 import StatusContent  from "./components/sections/StatusContent";
 import SkillsContent from "./components/sections/SkillsContent";
 import QuestsContent from "./components/sections/QuestsContent";
-import ContactContent  from "./components/sections/ContactContent"; 
+import ContactsContent  from "./components/sections/ContactsContent"; 
 
 import "./styles/portfolio.css";
 
@@ -29,7 +29,7 @@ export default function App() {
       <StatusContent key="status" data={DATA} />,
       <SkillsContent key="skills" skills={DATA.skills} />,
       <QuestsContent key="quests" quests={DATA.quests} />,
-      <ContactContent key="contact" contact={DATA.contact} />,
+      <ContactsContent key="contact" contact={DATA.contact} />,
     ],
     []
   );
