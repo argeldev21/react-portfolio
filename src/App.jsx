@@ -4,7 +4,6 @@ import { RankNav } from "./components/navigation/RankNav";
 import { HeroContent } from "./components/sections/HeroContent";
 import StatusContent  from "./components/sections/StatusContent";
 import SkillsContent from "./components/sections/SkillsContent";
-import QuestsContent from "./components/sections/QuestsContent";
 import ContactsContent  from "./components/sections/ContactsContent"; 
 
 import "./styles/portfolio.css";
@@ -28,7 +27,7 @@ export default function App() {
       <HeroContent key="hero" data={DATA} />,
       <StatusContent key="status" data={DATA} />,
       <SkillsContent key="skills" skills={DATA.skills} />,
-      <QuestsContent key="quests" quests={DATA.quests} />,
+      <SkillsContent key="quests" quests={DATA.quests} />,
       <ContactsContent key="contact" contact={DATA.contact} />,
     ],
     []
