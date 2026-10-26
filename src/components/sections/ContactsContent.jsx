@@ -1,5 +1,5 @@
 
-import { Mail, Plane } from "lucide-react";
+import { Mail, Send } from "lucide-react";
 import  SystemFrame  from "../ui/SystemFrame";
 import { DATA } from "../../data/portfolioData";
 
@@ -12,7 +12,7 @@ export default function ContactsContent() {
         <p>{DATA.contact.body}</p>
         {DATA.contact.email && (
           <a className="contact-btn" href={`mailto:${DATA.contact.email}`}>
-            <Plane size={16} /> Invia richiesta
+            <Send size={16} /> Invia richiesta
           </a>
         )}
         <div className="contact-socials">
