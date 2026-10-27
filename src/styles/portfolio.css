@@ -542,3 +542,84 @@ h1, h2, h3 {
   .sw-dot,
   .hero-scroll svg { animation: none; }
 }
+
+/* -------- Mobile: navigazione orizzontale, niente scrollbar -------- */
+.hint-right { display: none; }
+
+@keyframes sw-clip-close-x {
+  from { clip-path: inset(0 0% 0 0%); }
+  to   { clip-path: inset(0 50% 0 50%); }
+}
+@keyframes sw-clip-open-x {
+  from { clip-path: inset(0 50% 0 50%); }
+  to   { clip-path: inset(0 0% 0 0%); }
+}
+@keyframes sw-edge-left-close  { from { left: 0%; }  to { left: 50%; } }
+@keyframes sw-edge-right-close { from { right: 0%; } to { right: 50%; } }
+@keyframes sw-edge-left-open   { from { left: 50%; } to { left: 0%; } }
+@keyframes sw-edge-right-open  { from { right: 50%; } to { right: 0%; } }
+@keyframes sw-bob-x {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+@media (max-width: 640px) {
+  /* Nessuna scrollbar di pagina; l'altezza segue la viewport reale del browser mobile */
+  html, body { overflow: hidden; overscroll-behavior-x: none; }
+  .sw-root { height: 100vh; height: 100dvh; }
+
+  /* Lo stage può scorrere in verticale se la sezione è alta, ma senza barra visibile */
+  .sw-stage {
+    height: 100vh;
+    height: 100dvh;
+    align-items: flex-start;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .sw-shutter { margin-top: auto; margin-bottom: auto; }
+
+  .sw-stage::-webkit-scrollbar,
+  .quest-list::-webkit-scrollbar { display: none; width: 0; height: 0; }
+  .quest-list { scrollbar-width: none; -ms-overflow-style: none; }
+
+  /* Transizione orizzontale: la serranda si chiude/apre da sinistra e destra */
+  .sw-shutter-clip.closing { animation-name: sw-clip-close-x; }
+  .sw-shutter-clip.opening { animation-name: sw-clip-open-x; }
+
+  .sw-edge { top: 0; bottom: 0; left: auto; right: auto; width: 2px; height: auto; }
+  .sw-edge-top { left: 0; top: 0; }
+  .sw-edge-bottom { right: 0; bottom: 0; }
+  .sw-edge-top.closing    { animation-name: sw-edge-left-close; }
+  .sw-edge-bottom.closing { animation-name: sw-edge-right-close; }
+  .sw-edge-top.opening    { animation-name: sw-edge-left-open; }
+  .sw-edge-bottom.opening { animation-name: sw-edge-right-open; }
+
+  /* Hint "scorri": a destra invece che in giù */
+  .hint-down { display: none; }
+  .hint-right { display: inline; }
+  .hero-scroll svg.hint-right { animation-name: sw-bob-x; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll svg.hint-right { animation: none; }
+}
+
+/* -------- Mobile: paginazione in basso -------- */
+@media (max-width: 640px) {
+  .rank-nav {
+    top: auto;
+    right: auto;
+    left: 50%;
+    bottom: max(0.9rem, env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    flex-direction: row;
+    gap: 6px;
+  }
+  .rank-item { padding: 10px 4px; } /* area di tocco più comoda */
+  .rank-line { width: 14px; height: 1px; }
+
+  /* Niente più corsia riservata a destra: lo spazio serve in basso */
+  .sw-stage { padding: 1rem 0.8rem 3.4rem; }
+}

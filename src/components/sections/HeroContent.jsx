@@ -1,6 +1,6 @@
 import  { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
-import { ArrowDown } from 'lucide-react'; 
+import { ArrowDown, ArrowRight } from 'lucide-react';
 import { DATA } from "../../data/portfolioData";
 
 export const HeroContent = () => {
@@ -36,10 +36,12 @@ export const HeroContent = () => {
         <span ref={taglineRef} />
       </p>
 
-      {/* --- SCORRI PER CONTINUARE (RIPRISTINATO) --- */}
+      {/* Indicazione di scroll: freccia in giù su desktop, a destra su mobile */}
       <div className="hero-scroll">
-        <ArrowDown size={14} />
-        <span>SCORRI PER CONTINUARE</span>
+        <ArrowDown size={14} className="hint-down" />
+        <span className="hint-down">SCORRI PER CONTINUARE</span>
+        <span className="hint-right">SCORRI A DESTRA</span>
+        <ArrowRight size={14} className="hint-right" />
       </div>
     </div>
   );

@@ -14,15 +14,24 @@ const CLOSE_MS = 380;
 const OPEN_MS = 420;
 const INERTIA_LOCK_MS = 250;
 
-// Risale dal target fino alla root cercando un elemento con scroll verticale
-// che possa ancora scorrere nella direzione indicata (1 = giù, -1 = su).
-function findScrollable(el, dir, root) {
+// In modalità mobile si cambia sezione con lo swipe orizzontale (destra = avanti)
+const MOBILE_QUERY = "(max-width: 640px)";
+const SWIPE_MIN_PX = 40;
+
+// Risale dal target fino alla root cercando un elemento che possa ancora scorrere
+// nella direzione indicata (1 = giù/destra, -1 = su/sinistra) sull'asse richiesto.
+function findScrollable(el, dir, root, axis = "y") {
+  const horizontal = axis === "x";
   while (el && el !== root && el.nodeType === 1) {
-    const { overflowY } = window.getComputedStyle(el);
-    if (/(auto|scroll)/.test(overflowY) && el.scrollHeight > el.clientHeight + 1) {
-      const atTop = el.scrollTop <= 0;
-      const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 1;
-      if ((dir > 0 && !atBottom) || (dir < 0 && !atTop)) return el;
+    const style = window.getComputedStyle(el);
+    const overflow = horizontal ? style.overflowX : style.overflowY;
+    const size = horizontal ? el.scrollWidth : el.scrollHeight;
+    const client = horizontal ? el.clientWidth : el.clientHeight;
+    if (/(auto|scroll)/.test(overflow) && size > client + 1) {
+      const pos = horizontal ? el.scrollLeft : el.scrollTop;
+      const atStart = pos <= 0;
+      const atEnd = pos + client >= size - 1;
+      if ((dir > 0 && !atEnd) || (dir < 0 && !atStart)) return el;
     }
     el = el.parentElement;
   }
@@ -36,8 +45,8 @@ export default function App() {
   const pendingIndex = useRef(0);
   const closeTimer = useRef(null);
   const openTimer = useRef(null);
-  const touchStartY = useRef(0);
-  const touchCanScroll = useRef({ down: false, up: false });
+  const touchStart = useRef({ x: 0, y: 0 });
+  const touchCanScroll = useRef({ down: false, up: false, right: false, left: false });
   const lastNativeScroll = useRef(-1000);
   const stageRef = useRef(null);
 
@@ -158,19 +167,36 @@ export default function App() {
     };
 
     const onTouchStart = (e) => {
-      touchStartY.current = e.touches[0].clientY;
+      const touch = e.touches[0];
+      touchStart.current = { x: touch.clientX, y: touch.clientY };
       touchCanScroll.current = {
         down: !!findScrollable(e.target, 1, root),
         up: !!findScrollable(e.target, -1, root),
+        right: !!findScrollable(e.target, 1, root, "x"),
+        left: !!findScrollable(e.target, -1, root, "x"),
       };
     };
 
     const onTouchEnd = (e) => {
-      const delta = touchStartY.current - e.changedTouches[0].clientY;
-      if (Math.abs(delta) < 30) return;
-      const dir = delta > 0 ? 1 : -1;
-      // Se il gesto stava scorrendo del contenuto, non cambiare sezione
-      if (dir > 0 ? touchCanScroll.current.down : touchCanScroll.current.up) return;
+      const touch = e.changedTouches[0];
+      const dx = touchStart.current.x - touch.clientX;
+      const dy = touchStart.current.y - touch.clientY;
+      const can = touchCanScroll.current;
+
+      // Mobile: swipe orizzontale (verso sinistra = sezione successiva)
+      if (window.matchMedia(MOBILE_QUERY).matches) {
+        if (Math.abs(dx) < SWIPE_MIN_PX || Math.abs(dx) < Math.abs(dy) * 1.2) return;
+        const dir = dx > 0 ? 1 : -1;
+        // Se il gesto stava scorrendo un carosello, non cambiare sezione
+        if (dir > 0 ? can.right : can.left) return;
+        trigger(dir);
+        return;
+      }
+
+      // Desktop / tablet: swipe verticale come prima
+      if (Math.abs(dy) < 30) return;
+      const dir = dy > 0 ? 1 : -1;
+      if (dir > 0 ? can.down : can.up) return;
       trigger(dir);
     };
 
