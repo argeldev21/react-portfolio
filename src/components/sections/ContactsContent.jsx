@@ -5,7 +5,7 @@ import { DATA } from "../../data/portfolioData";
 
 export default function ContactsContent() {
   return (
-    <SystemFrame eyebrow="Contatti">
+    <SystemFrame eyebrow="Contacts">
       <div className="contact-wrap">
         <Mail size={22} color="var(--violet)" style={{ marginBottom: 14 }} />
         <h2>{DATA.contact.heading}</h2>

@@ -88,13 +88,12 @@ export const DATA = {
   quests: [],
 
   contact: {
-    heading: "Richiesta di alleanza",
-    body: "Hai un progetto in mente o cerchi un developer per il tuo team? Mandami un segnale.",
-    email: "argeldelacruz86@gmail.com",
-    socials: [
-      { label: "GitHub", icon: GithubIcon, href: "https://github.com/argeldev21" },
-      
-      { label: "LinkedIn", icon: LinkedinIcon, href: "" },
-    ],
-  },
+  heading: "Lavoriamo insieme",
+  body: "Sono un Junior Cloud / Web Developer aperto a nuove opportunità. Se hai un progetto o cerchi una risorsa per il tuo team, scrivimi: sarò felice di confrontarmi con te.",
+  email: "argeldelacruz86@gmail.com",
+  socials: [
+    { label: "GitHub", icon: GithubIcon, href: "https://github.com/argeldev21" },
+    { label: "LinkedIn", icon: LinkedinIcon, href: "" },
+  ],
+},
 };

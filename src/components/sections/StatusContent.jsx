@@ -5,7 +5,7 @@ import { DATA } from "../../data/portfolioData";
 
 export default function StatusContent() {
   return (
-    <SystemFrame eyebrow="Status window">
+    <SystemFrame eyebrow="Status">
       <div className="status-grid">
         <div className="status-top">
           <h2>{DATA.name}</h2>
