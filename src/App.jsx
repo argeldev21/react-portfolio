@@ -156,6 +156,15 @@ export default function App() {
       const dir = down ? 1 : -1;
       const stage = stageRef.current;
 
+      // Se la sezione contiene una lista scorrevole (es. skill), scorri prima quella
+      const inner = stage?.querySelector(".skills-groups");
+      if (inner && findScrollable(inner, dir, root)) {
+        const step = e.key.startsWith("Page") ? inner.clientHeight * 0.9 : 80;
+        inner.scrollBy({ top: dir * step });
+        lastNativeScroll.current = performance.now();
+        return;
+      }
+
       // Se la sezione è più alta dello schermo, prima scorri, poi cambia sezione
       if (stage && findScrollable(stage, dir, root)) {
         const step = e.key.startsWith("Page") ? stage.clientHeight * 0.9 : 80;

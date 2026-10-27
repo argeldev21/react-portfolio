@@ -4,7 +4,7 @@ import { DATA } from "../../data/portfolioData";
 
 export default function SkillsContent() {
   return (
-    <SystemFrame eyebrow="Skill tree">
+    <SystemFrame eyebrow="Skills">
       <div className="skills-groups">
         {DATA.skills.map((g) => (
           <div key={g.group}>

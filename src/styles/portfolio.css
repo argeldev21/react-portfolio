@@ -242,7 +242,20 @@ h1, h2, h3 {
 .stat-value { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--text-muted); text-align: right; }
 
 /* -------- Skills -------- */
-.skills-groups { display: grid; gap: 1.8rem; }
+.skills-groups {
+  display: grid;
+  gap: 1.8rem;
+  /* Se aggiungi altre skill la lista scorre dentro il frame */
+  max-height: 62vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--glow) transparent;
+}
+.skills-groups::-webkit-scrollbar { width: 4px; }
+.skills-groups::-webkit-scrollbar-track { background: rgba(56, 189, 248, 0.05); border-radius: 2px; }
+.skills-groups::-webkit-scrollbar-thumb { background: var(--glow); border-radius: 2px; }
 .skill-group-title {
   font-family: 'Rajdhani', sans-serif;
   font-weight: 600;
@@ -622,4 +635,9 @@ h1, h2, h3 {
 
   /* Niente più corsia riservata a destra: lo spazio serve in basso */
   .sw-stage { padding: 1rem 0.8rem 3.4rem; }
+}
+
+/* -------- Mobile: altezza lista skill = viewport meno stage, frame e header -------- */
+@media (max-width: 640px) {
+  .skills-groups { max-height: calc(100vh - 11rem); max-height: calc(100dvh - 11rem); padding-right: 8px; }
 }
